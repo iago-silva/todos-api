@@ -1,3 +1,7 @@
+# require database cleaner at the top level
+require 'database_cleaner'
+# [...]
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -32,8 +36,6 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-# require database cleaner at the top level
-require 'database_cleaner'
 # [...]
 # configure shoulda matchers to use rspec as the test framework and full matcher libraries for rails
 Shoulda::Matchers.configure do |config|
@@ -42,6 +44,9 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+# [...]
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -88,5 +93,7 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include RequestSpecHelper, type: :request
   # [...]
 end
