@@ -36,6 +36,6 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def set_todo_item
-    @item = @todo.items.find_by!(id: params[:id]) if @todo
+    @item = @todo.items.find_by!(id: params[:id])
   end
 end
