@@ -36,6 +36,6 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def item_params
-    params.permit(:name, :done)
+    params.require(:item).permit(:name, :done)
   end
 end
