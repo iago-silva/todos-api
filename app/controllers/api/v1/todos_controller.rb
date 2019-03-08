@@ -16,7 +16,7 @@ class Api::V1::TodosController < ApplicationController
   end
 
   def update
-    @todo.update(todo_params)
+    @todo.update!(todo_params)
     head :no_content
   end
 
@@ -27,11 +27,11 @@ class Api::V1::TodosController < ApplicationController
 
   private
 
-  def todo_params
-    params.permit(:title, :created_by)
-  end
-
   def set_todo
     @todo = Todo.find(params[:id])
+  end
+
+  def todo_params
+    params.permit(:title, :created_by)
   end
 end

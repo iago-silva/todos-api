@@ -16,7 +16,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
+    @item.update!(item_params)
     head :no_content
   end
 
@@ -27,15 +27,15 @@ class Api::V1::ItemsController < ApplicationController
 
   private
 
-  def item_params
-    params.permit(:name, :done)
-  end
-
   def set_todo
     @todo = Todo.find(params[:todo_id])
   end
 
   def set_item
     @item = @todo.items.find(params[:id])
+  end
+
+  def item_params
+    params.permit(:name, :done)
   end
 end
