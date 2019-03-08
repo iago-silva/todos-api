@@ -1,6 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
   before_action :set_todo
-  before_action :set_todo_item, only: [:show, :update, :destroy]
+  before_action :set_item, only: [:show, :update, :destroy]
 
   def index
     json_response(@todo.items)
@@ -35,7 +35,7 @@ class Api::V1::ItemsController < ApplicationController
     @todo = Todo.find(params[:todo_id])
   end
 
-  def set_todo_item
-    @item = @todo.items.find_by!(id: params[:id])
+  def set_item
+    @item = @todo.items.find(params[:id])
   end
 end
