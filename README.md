@@ -1,6 +1,6 @@
 ### On Heroku
 
-https://heroku-todos-api.herokuapp.com/
+https://heroku-todos-api.herokuapp.com/api/v1/
 
 ### References
 
