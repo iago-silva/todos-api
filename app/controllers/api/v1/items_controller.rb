@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController
   before_action :set_todo
   before_action :set_todo_item, only: [:show, :update, :destroy]
 
