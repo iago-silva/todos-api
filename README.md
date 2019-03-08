@@ -1,4 +1,4 @@
-### On heroku
+### On Heroku
 
 https://heroku-todos-api.herokuapp.com/api/v1/
 
