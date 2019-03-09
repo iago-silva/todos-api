@@ -21,7 +21,7 @@ class Api::V1::TodosController < ApplicationController
   end
 
   def destroy
-    @todo.destroy
+    @todo.destroy!
     head :no_content
   end
 
