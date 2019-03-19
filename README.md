@@ -1,4 +1,4 @@
-<h1>Free Todos API to consume and have fun. Enjoy it ;)</h1>
+<h1>Free Todos API. Enjoy it ;)</h1>
 
 ### On live
 
