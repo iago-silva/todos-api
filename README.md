@@ -1,5 +1,3 @@
-<h1>Free Todos API. Enjoy it ;)</h1>
-
 ### On live
 
 https://heroku-todos-api.herokuapp.com/api/v1/
