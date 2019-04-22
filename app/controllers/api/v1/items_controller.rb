@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::ItemsController < ApplicationController
   before_action :set_todo
   before_action :set_item, only: [:show, :update, :destroy]

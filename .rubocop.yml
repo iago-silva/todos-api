@@ -1,0 +1,45 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'Gemfile.lock'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+    - 'config/initializers/**/*'
+    - 'config/environments/**/*'
+    - 'app/services/seed/**/*'
+    - 'node_modules/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'config/deploy.rb'
+    - 'config/routes.rb'
+    - 'spec/**/*.rb'
+
+Documentation:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
