@@ -1,5 +1,3 @@
-<h1>Free API to consume and have fun. Enjoy it ;)</h1>
-
 ### On live
 
 https://heroku-todos-api.herokuapp.com/api/v1/
