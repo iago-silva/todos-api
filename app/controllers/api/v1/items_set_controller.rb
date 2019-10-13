@@ -1,4 +1,4 @@
-class Api::V1::DeleteAllItemsController < ApplicationController
+class Api::V1::ItemsSetController < ApplicationController
   before_action :set_todo
 
   def destroy

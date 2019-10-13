@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :todos do
         resources :items
-        resource :delete_all_items, only: :destroy
+        resource :items_set, only: :destroy
       end
     end
   end
