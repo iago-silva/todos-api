@@ -8,4 +8,4 @@ https://app.swaggerhub.com/apis-docs/iago-silva/todos-api/1.0.0
 
 ### Consumers
 
-- https://taskfinisher.netlify.com (https://github.com/pbruny/todoapp-react)
+- [Task Finisher](https://taskfinisher.netlify.com) (https://github.com/pbruny/todoapp-react)
