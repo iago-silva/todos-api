@@ -61,7 +61,7 @@ RSpec.describe 'ITEMS request' do
   end
 
   describe 'POST create' do
-    let(:valid_attributes) { { name: 'Visit Narnia', done: false } }
+    let(:valid_attributes) { { item: { name: 'Visit Narnia', done: false } } }
 
     context 'when request attributes are valid' do
       before { post api_v1_todo_items_path(todo_id), params: valid_attributes }
@@ -72,7 +72,10 @@ RSpec.describe 'ITEMS request' do
     end
 
     context 'when an invalid request' do
-      before { post api_v1_todo_items_path(todo_id, id), params: {} }
+      before do
+        post api_v1_todo_items_path(todo_id, id),
+             params: { item: { todo_id: todo_id } }
+      end
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -85,7 +88,7 @@ RSpec.describe 'ITEMS request' do
   end
 
   describe 'PUT update' do
-    let(:valid_attributes) { { name: 'Mozart' } }
+    let(:valid_attributes) { { item: { name: 'Mozart' } } }
 
     before { put api_v1_todo_item_path(todo_id, id), params: valid_attributes }
 

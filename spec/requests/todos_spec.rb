@@ -47,7 +47,7 @@ RSpec.describe 'TODOS request', type: :request do
   end
 
   describe 'POST create' do
-    let(:valid_attributes) { { title: 'Learn Elm', created_by: '1' } }
+    let(:valid_attributes) { { todo: { title: 'Learn Elm', created_by: '1' } } }
 
     context 'when the request is valid' do
       before { post api_v1_todos_path, params: valid_attributes }
@@ -62,7 +62,7 @@ RSpec.describe 'TODOS request', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post api_v1_todos_path, params: { title: 'Foobar' } }
+      before { post api_v1_todos_path, params: { todo: { title: 'Foobar' } } }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -76,7 +76,7 @@ RSpec.describe 'TODOS request', type: :request do
   end
 
   describe 'PUT update' do
-    let(:valid_attributes) { { title: 'Shopping' } }
+    let(:valid_attributes) { { todo: { title: 'Shopping'}  } }
 
     context 'when the record exists' do
       before { put api_v1_todo_path(todo_id), params: valid_attributes }
